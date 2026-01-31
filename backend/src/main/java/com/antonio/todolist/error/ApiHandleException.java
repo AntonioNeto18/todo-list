@@ -2,7 +2,6 @@ package com.antonio.todolist.error;
 
 import com.antonio.todolist.dto.TodoError;
 import com.antonio.todolist.error.exceptions.TodoNotFoundException;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
