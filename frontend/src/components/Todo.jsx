@@ -1,13 +1,13 @@
 const Todo = ({ todo, handleDeleteTodos, onOpenModal }) => {
     return (
         <div
-            className="w-full bg-gray-100 shadow-sm px-10 py-5 shadow-black flex items-center justify-between my-10 cursor-pointer"
+            className="w-full bg-gray-100 shadow-sm px-10 py-5 shadow-black flex flex-col md:flex-row md:items-center justify-between my-10 cursor-pointer"
             onClick={() => onOpenModal(todo)}
         >
             <div
                 className="flex flex-col"
             >
-                <span className="text-3xl font-semibold">{todo.text}</span>
+                <span className="md:text-3xl text-lg font-semibold">{todo.text}</span>
                 <span
                     className={"text-lg font-bold capitalize"}
                 >
@@ -17,7 +17,7 @@ const Todo = ({ todo, handleDeleteTodos, onOpenModal }) => {
 
             <div className="flex items-center">
 
-                <div className="flex flex-col items-center gap-2">
+                <div className="flex flex-col items-start md:items-center gap-2">
                     <p className={`capitalize text-lg font-bold ${todo.status.toLowerCase() === "pendente"
                             ? "text-red-500"
                             : "text-green-500"
