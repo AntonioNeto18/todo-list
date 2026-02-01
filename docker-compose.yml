@@ -1,5 +1,6 @@
 version: "3.8"
 services:
+
   postgres:
     image: postgres:16
     container_name: postgres-db
@@ -10,9 +11,9 @@ services:
     ports:
       - "5432:5432"
 
-  api:
-    build: .
-    container_name: api
+  backend:
+    build: ./backend/
+    container_name: backend
     ports:
       - "8080:8080"
     depends_on:
@@ -21,3 +22,11 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/mydb
       SPRING_DATASOURCE_USERNAME: admin
       SPRING_DATASOURCE_PASSWORD: admin123
+
+  frontend:
+    build: ./frontend/
+    container_name: frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
