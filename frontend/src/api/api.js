@@ -1,4 +1,6 @@
-const api_url = import.meta.env.VITE_API_URL || "http://localhost:8080/todos";
+const api_base_url = import.meta.env.VITE_API_URL || "http://localhost:8080";
+const api_url = `${api_base_url}/todos`;
+
 const default_headers = {
     'Content-Type': 'application/json',
 }
